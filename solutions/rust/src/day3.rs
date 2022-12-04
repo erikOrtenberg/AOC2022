@@ -3,7 +3,7 @@ use core::iter::Zip;
 use std::slice::Iter;
 
 pub(crate) fn day3() {
-    let contents = std::fs::read_to_string("input/day3").expect("this should work");
+    let contents = std::fs::read_to_string("input/day3.txt").expect("this should work");
     let backpacks : Vec<(&str, &str)> = contents
         .lines()
         //.inspect(|x| {dbg!(x);})

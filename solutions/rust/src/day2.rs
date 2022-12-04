@@ -3,7 +3,7 @@ use core::iter::Zip;
 use std::slice::Iter;
 
 pub(crate) fn day2() {
-    let contents = fs::read_to_string("input/day2")
+    let contents = fs::read_to_string("input/day2.txt")
         .expect("should've been able to read file");
     let mut parsed_input : Vec<&str> = contents.split("\n").collect();
     parsed_input.pop(); 
