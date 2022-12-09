@@ -8,14 +8,6 @@ pub(crate) fn day5(){
     let (crate_stacks, moves) = parse_input(contents);
     part1(crate_stacks.clone(), moves.clone());
     part2(crate_stacks.clone(), moves.clone());
-    /* 
-    let mut crate_stacks_mut = crate_stacks.clone(); 
-    println!("{:?}", &crate_stacks_mut);
-    execute_move(&mut crate_stacks_mut, (2,1,2), false);
-    println!("{:?}", &crate_stacks_mut);
-    execute_move(&mut crate_stacks_mut, (2,1,2), false);
-    println!("{:?}", &crate_stacks_mut);
-    */
 }
 
 fn part1(crate_stacks : CrateStacks, moves : Moves) -> String {
