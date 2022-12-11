@@ -58,14 +58,14 @@ fn execute_one_move_part1(crate_stacks : &mut CrateStacks, from : i32, to : i32)
 
 fn execute_one_move_part2(crate_stacks : &mut CrateStacks, amount : i32, from : i32, to : i32) {
     let mut tmp : Vec<String> = Vec::new();
-    for i in 0..amount {
+    for _i in 0..amount {
         let mut from_value = String::new();
         if let Some(from_vec) = crate_stacks.get_mut(from as usize){
             from_value = (*from_vec.pop().expect("msg")).to_string();
         }
         tmp.push(from_value);
     }
-    for i in 0..amount {
+    for _i in 0..amount {
         if let Some(to_vec) = crate_stacks.get_mut(to as usize){
             to_vec.push(tmp.pop().expect("msg"));
         }

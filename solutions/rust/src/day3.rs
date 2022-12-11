@@ -1,6 +1,3 @@
-use std::{fs, result};
-use core::iter::Zip;
-use std::slice::Iter;
 
 pub(crate) fn day3() {
     let contents = std::fs::read_to_string("input/day3.txt").expect("this should work");
@@ -35,10 +32,10 @@ fn evaluate_backpack(side1:&str, side2 :&str) -> i32 {
 }
 
 fn char_to_value(c : char) -> i32 {
-    if (c.is_uppercase()) {
-        return (c.to_ascii_lowercase().to_digit(36).expect("msg") as i32 - 9 + 26);
+    if c.is_uppercase() {
+        return c.to_ascii_lowercase().to_digit(36).expect("msg") as i32 - 9 + 26;
     }
-    return (c.to_digit(36).expect("msg") as i32 - 9);
+    return c.to_digit(36).expect("msg") as i32 - 9;
 }
 
 fn get_overlap(b1 : String, b2 : String, b3 : String) -> char {
@@ -58,7 +55,7 @@ fn find_badge(backpacks : &mut Vec<(& str, & str)>) -> char {
     let b1: (&str, &str) = backpacks.pop().expect("b1");
     let b2: (&str, &str) = backpacks.pop().expect("b2");
     let b3: (&str, &str) = backpacks.pop().expect("b3");
-    return get_overlap((b1.0.to_owned() + b1.1), (b2.0.to_owned() + b2.1), b3.0.to_owned() + b3.1);
+    return get_overlap(b1.0.to_owned() + b1.1, b2.0.to_owned() + b2.1, b3.0.to_owned() + b3.1);
 }
 
 fn part1(backpacks : Vec<(&str, &str)>) -> i32{
